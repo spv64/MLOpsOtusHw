@@ -12,6 +12,6 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: markdownlint-cli2
         run: docker run --rm -v "$GITHUB_WORKSPACE:/workdir" davidanson/markdownlint-cli2:v0.23.2
