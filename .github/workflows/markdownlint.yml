@@ -1,0 +1,17 @@
+name: markdownlint
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: markdownlint-cli2
+        run: docker run --rm -v "$GITHUB_WORKSPACE:/workdir" davidanson/markdownlint-cli2:v0.23.2
